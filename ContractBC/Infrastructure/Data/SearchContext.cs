@@ -10,9 +10,11 @@ public class SearchContext : DbContext
     {
         ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
     }
-    public DbSet<GuidKeyAndDescription> SearchResults => Set<GuidKeyAndDescription>();
+    public DbSet<SearchResult> SearchResults => Set<SearchResult>();
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<GuidKeyAndDescription>().HasNoKey();
+        modelBuilder.Entity<SearchResult>().HasNoKey();
+       
     }
 }

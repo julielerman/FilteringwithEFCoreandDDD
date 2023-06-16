@@ -24,19 +24,19 @@ namespace IntegrationTests
             _repo = new ContractSearchService(_context);
         }
 
-        [TestMethod]
-        public void ContractAuthorSearchFindsOneMatch()
-        {
-            var contractList = _repo.GetContractPickListForAuthorLastName("Ler").Result;
-            Assert.AreEqual(1, contractList.Count());
-        }
+        //[TestMethod]
+        //public void ContractAuthorSearchFindsOneMatch()
+        //{
+        //    var contractList = _repo.GetContractPickListForAuthorLastName("Ler").Result;
+        //    Assert.AreEqual(1, contractList.Count());
+        //}
 
-        [TestMethod]
-        public void ContractAuthorSearchFindsTwoMatches()
-        {
-            var contractList = _repo.GetContractPickListForAuthorLastName("Le").Result;
-            Assert.AreEqual(2, contractList.Count());
-        }
+        //[TestMethod]
+        //public void ContractAuthorSearchFindsTwoMatches()
+        //{
+        //    var contractList = _repo.GetContractPickListForAuthorLastName("Le").Result;
+        //    Assert.AreEqual(2, contractList.Count());
+        //}
         private void Seed()
         {
             var c1 = new Contract(

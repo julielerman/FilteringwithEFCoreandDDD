@@ -14,15 +14,15 @@ namespace Infrastructure.Data.Migrations
     @initdateend date
 AS
 
-  select groupednames.contractId as KeyValue,[description]
+  select groupednames.contractId as KeyValue,[description],ContractNumber
 FROM
-    (select contractid,currentversionid, dbo.BuildContractHighlights(dateinitiated,workingtitle,string_agg(FirstName + ' ' + LastName,',')) as description
+    (select contractid,currentversionid, dbo.BuildContractHighlights(dateinitiated,workingtitle,string_agg(FirstName + ' ' + LastName,',')) as description,ContractNumber
     from CurrentContractversions
     where currentversionid in 
         (select currentversionid
          from CurrentContractversions
          where cast(dateinitiated as date)>=@initdatestart) and cast(dateinitiated as date)<=@initdateend  
-    group by [CurrentVersionId],WorkingTitle,contractid,DateInitiated ) groupednames
+    group by [CurrentVersionId],WorkingTitle,contractid,DateInitiated,ContractNumber ) groupednames
        ");
 
         }

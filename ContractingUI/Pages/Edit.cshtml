@@ -1,0 +1,56 @@
+﻿@page
+@model ContractingUI.Pages.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Contract</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Contract.ContractNumber" class="control-label"></label>
+                <input asp-for="Contract.ContractNumber" class="form-control" />
+                <span asp-validation-for="Contract.ContractNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contract.DateInitiated" class="control-label"></label>
+                <input asp-for="Contract.DateInitiated" class="form-control" />
+                <span asp-validation-for="Contract.DateInitiated" class="text-danger"></span>
+            </div>
+         
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Contract.Completed" /> @Html.DisplayNameFor(model => model.Contract.Completed)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contract.CompletedDate" class="control-label"></label>
+                <input asp-for="Contract.CompletedDate" class="form-control" />
+                <span asp-validation-for="Contract.CompletedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contract.Fullfilled" class="control-label"></label>
+                <input asp-for="Contract.Fullfilled" class="form-control" />
+                <span asp-validation-for="Contract.Fullfilled" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Contract.Id" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

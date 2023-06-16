@@ -4,14 +4,13 @@
 
 namespace Infrastructure.Data.Migrations
 {
-    public partial class procedureToSearchByAuthorLastName : Migration
+    public partial class sproctosearchall : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-
             migrationBuilder.Sql(
-                @"CREATE PROCEDURE GetContractsForAuthorLastNameStartswith
-    @LastName varchar(15)
+    @"CREATE PROCEDURE GetContractHighlightsAll
+   
 AS
 select groupednames.contractId as KeyValue,[description],ContractNumber
 FROM
@@ -19,17 +18,15 @@ FROM
     from CurrentContractversions
     where currentversionid in 
         (select currentversionid
-         from currentcontractversions
-         where left(LastName,len(trim(@LastName)))=trim(@LastName))
+         from currentcontractversions)
     group by CurrentVersionId,WorkingTitle,contractid,DateInitiated,ContractNumber)  groupednames
-          ");
-
+");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.Sql("DROP PROCEDURE GetContractsForAuthorLastNameStartswith");
-
+            migrationBuilder.Sql("DROP PROCEDURE GetCOntractHighlightsAll");
+            
         }
     }
 }

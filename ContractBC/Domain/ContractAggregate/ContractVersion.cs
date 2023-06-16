@@ -69,6 +69,12 @@ namespace ContractBC.ContractAggregate
         {
             Accepted = true;
         }
+        public List<Author> AuthorsCopy()
+        {
+            var newAuthors = new List<Author>();
+            Authors.ToList().ForEach(author => newAuthors.Add(author.Copy()));
+            return newAuthors;
+        }
 
     }
 }

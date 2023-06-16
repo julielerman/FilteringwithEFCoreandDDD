@@ -25,14 +25,14 @@ app.MapGet("/authors/firstname/{first}",async (string first, ContractedAuthorsSe
 app.MapGet("/authors/lastname/{last}", async (string last, ContractedAuthorsService authorService) =>
     await authorService.GetAuthorsByLastNameAsync(last));
 
-app.MapGet("contracts/ByAuthorLastName{last}",
-    async(string last, ContractSearchService searcher)=>
-    await searcher.GetContractPickListForAuthorLastName(last));
+//app.MapGet("contracts/ByAuthorLastName{last}",
+//    async(string last, ContractSearchService searcher)=>
+//    await searcher.GetContractPickListForAuthorLastName(last));
 
-app.MapGet("contracts/ByInitDateRange{start,end}",
-    async (string start,string end, ContractSearchService searcher) =>
-    await searcher.GetContractPickListForInitiatedDateRange
-      (DateTime.Parse(start), DateTime.Parse(end)));
+//app.MapGet("contracts/ByInitDateRange{start,end}",
+//    async (string start,string end, ContractSearchService searcher) =>
+//    await searcher.GetContractPickListForInitiatedDateRange
+//      (DateTime.Parse(start), DateTime.Parse(end)));
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

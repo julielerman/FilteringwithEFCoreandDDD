@@ -1,16 +1,18 @@
 ﻿namespace PublisherSystem.SharedKernel.DTOs;
 
-public class GuidKeyAndDescription
+public class SearchResult
 {
-    public GuidKeyAndDescription(Guid key, string description)
+    public SearchResult(Guid key, string description,string contractNumber)
     {
         KeyValue = key;
         Description = description;
+        ContractNumber = contractNumber;
     }
-    private GuidKeyAndDescription()
+    private SearchResult()
     {
         
     }
     public Guid KeyValue { get; private set; }
     public string? Description { get; private set; }
+    public string? ContractNumber { get; private set; }
 }
