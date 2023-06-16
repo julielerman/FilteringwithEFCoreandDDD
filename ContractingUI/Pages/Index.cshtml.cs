@@ -35,7 +35,7 @@ namespace ContractingUI.Pages
 
         public async Task OnGetAsync()
         {
-            if (_service.SearchResults == null)
+            if (_service.SearchResults == null || Request.QueryString.Value=="?")
             {
                 ContractHighlights = await _service.CallService(ContractSearchService.ServiceCalls.All,new[] { "" });
             }
