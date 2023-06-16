@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using PublisherSystem.SharedKernel.DTOs;
 
 namespace Infrastructure.Data.Services;
@@ -14,6 +13,7 @@ public class ContractSearchService
         _context = context;
     }
     public  List<SearchResult> SearchResults => _results;
+
    public async Task<List<SearchResult>> CallService(ServiceCalls serviceCall, string[] filter)
     {
         switch (serviceCall)
@@ -45,28 +45,26 @@ public class ContractSearchService
    
     private async Task<List<SearchResult>> GetContractPickListForAll()
     {
-        _results = _context.SearchResults.FromSqlInterpolated
-          ($"GetContractHighlightsAll").ToList();
+        _results = _context.SearchResults
+            .FromSqlInterpolated($"GetContractHighlightsAll").ToList();
         return _results;
     }
-    private async Task<List<SearchResult>> 
-        GetContractPickListForAuthorLastName(string lastnameStart)
+    private async Task<List<SearchResult>> GetContractPickListForAuthorLastName(string lastnameStart)
     {
-        _results=  _context.SearchResults.FromSqlInterpolated
-            ($"GetContractsForAuthorLastNameStartswith {lastnameStart}").ToList();
+        _results=  _context.SearchResults
+            .FromSqlInterpolated($"GetContractsForAuthorLastNameStartswith {lastnameStart}").ToList();
         return _results;
     }
 
-    private async Task<List<SearchResult>> 
-        GetContractPickListForInitiatedDateRange(DateTime datestart, DateTime dateend)
+    private async Task<List<SearchResult>> GetContractPickListForInitiatedDateRange(DateTime datestart, DateTime dateend)
     {
         _results= _context.SearchResults.FromSqlInterpolated
             ($"GetContractsInitiatedInDateRange {datestart},{dateend}").ToList();
         return _results;
 
     }
-    //other options 
-    //all contracts? Unsigned contracts? Abandoned contracts?
+
+
 
     public enum ServiceCalls
     {

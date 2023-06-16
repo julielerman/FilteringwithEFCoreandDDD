@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.Configuration["baseUrls:apiBase"]) });
 builder.Services.AddScoped<ContractSearchService>();
-
+builder.Services.AddScoped<ContractFlexSearchService>();
 builder.Services.AddTransient<DemoTasks>();
 builder.Services.AddDbContext<SearchContext>
     (opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("PubDB")));

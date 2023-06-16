@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEndToTestTheSearch", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContractingFrontEndAPI", "APIToTestSearch\ContractingFrontEndAPI.csproj", "{0BF9E7DF-37C4-4F6A-97E4-415572819250}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractingUI", "ContractingUI\ContractingUI.csproj", "{CDF0D556-0F1B-4995-8693-97EA6A7B70B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContractingUI", "ContractingUI\ContractingUI.csproj", "{CDF0D556-0F1B-4995-8693-97EA6A7B70B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
