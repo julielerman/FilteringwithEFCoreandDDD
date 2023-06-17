@@ -5,18 +5,13 @@
     ViewData["Title"] = "Index FLEX";
 }
 
-<h1>Find Contracts</h1>
+<h1 style="color: red;">Find Contracts FLEX</h1>
 
 <form method="post">
     <p>
         Last Name: <input type="text" asp-for="LastNameSearch" />
-        @*<input type="submit" value="Last Name Filter" asp-page-handler="LastNameSearch" />*@
-    </p>
-
-    <p>
-        Start: <input type="date" asp-for="StartDateSearch" /> End: <input type="date" asp-for="EndDateSearch" />
-        @*<input type="submit" value="Date Range Filter" asp-page-handler="DateSearch" />*@
-        <input type="submit" value="Filter" asp-page-handler="Filter" />
+          Start: <input type="date" asp-for="StartDateSearch" /> End: <input type="date" asp-for="EndDateSearch" />
+         <input type="submit" value="Filter" asp-page-handler="Filter" />
     </p>
     <p>
         <input type="submit" value="Reset Filter" asp-page-handler="ResetFilter" />
