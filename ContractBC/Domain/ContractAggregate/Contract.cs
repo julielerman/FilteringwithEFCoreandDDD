@@ -66,8 +66,7 @@ public class Contract : BaseEntity<Guid>
         Completed = true;
         CompletedDate= DateTime.Now;
         FinalVersionId = CurrentVersionId;
-        var contractSignedEvent = new ContractSignedEvent(CurrentVersion(), CompletedDate);
-        Events.Add(contractSignedEvent);
+   
     }
 
     public ContractVersion CurrentVersion()
