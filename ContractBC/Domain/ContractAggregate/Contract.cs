@@ -1,5 +1,4 @@
 ﻿using ContractBC.Enums;
-using ContractBC.Events;
 using ContractBC.Services;
 using ContractBC.ValueObjects;
 using PublisherSystem.SharedKernel;
@@ -66,8 +65,7 @@ public class Contract : BaseEntity<Guid>
         Completed = true;
         CompletedDate= DateTime.Now;
         FinalVersionId = CurrentVersionId;
-        var contractSignedEvent = new ContractSignedEvent(CurrentVersion(), CompletedDate);
-        Events.Add(contractSignedEvent);
+   
     }
 
     public ContractVersion CurrentVersion()
