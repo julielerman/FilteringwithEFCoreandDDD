@@ -1,5 +1,4 @@
 ﻿using ContractBC.Enums;
-using ContractBC.Events;
 using ContractBC.Services;
 using ContractBC.ValueObjects;
 using PublisherSystem.SharedKernel;
