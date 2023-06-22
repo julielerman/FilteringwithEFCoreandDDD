@@ -2,7 +2,7 @@
 
 This is a twist on the solution in [EF Core 6 and DDD Pluralsight course repo](https://github.com/julielerman/EFCore6andDDDPluralsight).  
 
-Here, I have added a more intelligent search and a UI (a pair in fact) for the dotnet [FWDays '23](https://fwdays.com/en/event/dotnet-fwdays-2023) presentation, _Applying DDD Thinking to EF Core Search Filters_
+Here, I have added a more intelligent search and a UI (a pair in fact) for the dotnet [FWDays '23](https://fwdays.com/en/event/dotnet-fwdays-2023) presentation, _Applying DDD Thinking to EF Core Search Filters_ The demo is also the focus on an upcoming issue of [CODE Magazine](https://codemag.com/People/Bio/Julie.Lerman).
 
 ![Snag_8f7ca59](https://github.com/julielerman/FilteringwithEFCoreandDDD/assets/5007120/fd337688-c40c-4d5f-86a7-757e7e5324d4)
 
